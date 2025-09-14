@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "App (Vite + Lit)",
+  "compilerOptions": {
+    // Современная цель под бандлеры и браузеры
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    // Lit-декораторы и поля классов
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+
+    // Строгий режим + полезные усилители
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "useUnknownInCatchVariables": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    // Корректный ESM-импорт/экспорт без «магии»
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+
+    // DX/скорость
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmit": true,
+
+    // Типы окружения Vite + Node (для node:url в конфиге)
+    "types": ["vite/client", "node"],
+
+    // Алиасы под Vite + TS
+    "baseUrl": ".",
+    "paths": { "@/*": ["src/*"] }
+  },
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
+}

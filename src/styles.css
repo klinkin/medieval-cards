@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+@layer base {
+  html { @apply antialiased; }
+  body {
+    @apply bg-slate-50 text-slate-900;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .dark body { @apply bg-slate-900 text-slate-100; }
+}
+
+@layer components {
+  .ui-card { @apply rounded-2xl bg-white/90 shadow p-5 md:p-6; }
+  .dark .ui-card { @apply bg-slate-800/90; }
+  .ui-badge { @apply inline-flex items-center rounded-2xl border px-2.5 py-0.5 text-sm bg-white/60 text-slate-700; }
+  .dark .ui-badge { @apply bg-slate-800/60 text-slate-200 border-slate-600; }
+  .safe-px { padding-left: max(1rem, env(safe-area-inset-left)); padding-right: max(1rem, env(safe-area-inset-right)); }
+}
